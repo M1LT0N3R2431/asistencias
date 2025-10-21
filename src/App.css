@@ -1,42 +1,55 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* 🌍 Estilos base globales (Usaremos variables de App.css) */
+:root {
+  font-family: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Modo oscuro por defecto (Referencia a las variables de App.css) */
+  color-scheme: dark light;
+  background-color: var(--color-bg-dark, #1e1e2f); 
+  color: var(--color-text-primary, #f3f3f3); 
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* 🧼 Reset de márgenes y caja (Incluye pseudo-elementos) */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+/* 🧠 Cuerpo de la página (Solo prepara el lienzo) */
+body {
+  min-height: 100vh;
+  margin: 0; 
+  line-height: 1.5;
+}
+
+/* ✨ Enlaces */
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  /* Usando variable React para el hover oscuro */
+  color: var(--color-react, #61dafb);
+}
+
+/* 💡 Soporte para modo claro automático */
+@media (prefers-color-scheme: light) {
+  :root {
+    background-color: #f3f3f3; 
+    color: #1a1a1a; 
   }
-  to {
-    transform: rotate(360deg);
+
+  a:hover {
+    /* Usando variable Vite para el hover claro */
+    color: var(--color-vite, #646cff);
   }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }
