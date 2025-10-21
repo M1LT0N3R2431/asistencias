@@ -1,55 +1,107 @@
-/* 🌍 Estilos base globales (Usaremos variables de App.css) */
+/* 🎨 Paleta de colores - CENTRALIZADA */
 :root {
-  font-family: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
-  font-weight: 400;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  /* Colores Base */
+  --color-bg-dark: #1e1e2f;
+  --color-bg-light: #2a2a45;
+  --color-text-primary: #f3f3f3;
+  --color-text-secondary: #aaa;
+  
+  /* Colores de Marcas/Acento */
+  --color-react: #61dafb;
+  --color-vite: #646cff;
 
-  /* Modo oscuro por defecto (Referencia a las variables de App.css) */
-  color-scheme: dark light;
-  background-color: var(--color-bg-dark, #1e1e2f); 
-  color: var(--color-text-primary, #f3f3f3); 
+  /* Sombras */
+  --shadow-blur-logo: 1.5em; 
+  --shadow-card-base: 0 4px 20px rgba(0, 0, 0, 0.3);
+  --shadow-card-hover: 0 8px 25px rgba(0, 0, 0, 0.4);
 }
 
-/* 🧼 Reset de márgenes y caja (Incluye pseudo-elementos) */
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* 🧠 Cuerpo de la página (Solo prepara el lienzo) */
-body {
+/* 🔲 Contenedor principal */
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  
+  background: linear-gradient(145deg, var(--color-bg-dark) 0%, var(--color-bg-light) 100%);
+  color: var(--color-text-primary);
+  font-family: "Inter", system-ui, sans-serif;
+  
   min-height: 100vh;
-  margin: 0; 
-  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-/* ✨ Enlaces */
-a {
-  color: inherit;
-  text-decoration: none;
+/* ⚙️ Logo */
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  transition: all 0.4s ease;
+  filter: drop-shadow(0 0 0 transparent); 
+  cursor: pointer;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 var(--shadow-blur-logo) var(--color-vite));
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 var(--shadow-blur-logo) var(--color-react));
+}
+
+/* 🔁 Animación (Usado para el logo de Vite en App.jsx) */
+@keyframes logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .logo-spin { 
+    animation: logo-spin infinite 15s linear;
+  }
+}
+
+/* 🧱 Tarjeta o contenedor */
+.card {
+  background: var(--color-bg-light); 
+  border-radius: 1rem;
+  padding: 2em;
+  box-shadow: var(--shadow-card-base);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 1.5rem;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* 📘 Texto secundario */
+.read-the-docs {
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+  margin-top: 1rem;
   transition: color 0.3s ease;
 }
 
-a:hover {
-  /* Usando variable React para el hover oscuro */
-  color: var(--color-react, #61dafb);
+.read-the-docs:hover {
+  color: var(--color-react); 
 }
 
-/* 💡 Soporte para modo claro automático */
-@media (prefers-color-scheme: light) {
-  :root {
-    background-color: #f3f3f3; 
-    color: #1a1a1a; 
+/* 📱 Responsivo */
+@media (max-width: 768px) {
+  #root {
+    padding: 1rem;
   }
 
-  a:hover {
-    /* Usando variable Vite para el hover claro */
-    color: var(--color-vite, #646cff);
+  .logo {
+    height: 4.5em;
+  }
+
+  .card {
+    padding: 1.2em;
   }
 }
