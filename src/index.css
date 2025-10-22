@@ -1,3 +1,100 @@
-/* reset muy básico */
-* { box-sizing: border-box; }
-html, body, #root { height: 100%; margin: 0; padding: 0; font-family: 'Roboto', sans-serif; }
+index.css
+
+/* ======= RESET Y BASE ======= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  background-color: #eaf2ff;
+  color: #0f172a;
+  line-height: 1.5;
+}
+
+/* ======= TIPOGRAFÍA ======= */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  color: #0b3b8a;
+}
+
+p, span, small {
+  font-weight: 400;
+  color: #1e293b;
+}
+
+/* ======= BOTONES ======= */
+button {
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s ease;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid #1e40af;
+  color: #1e40af;
+  padding: 6px 12px;
+  border-radius: 8px;
+}
+
+.btn-outline:hover {
+  background: #1e40af;
+  color: #fff;
+}
+
+.btn-small {
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: none;
+  background: #ef4444;
+  color: #fff;
+}
+
+/* ======= LINKS ======= */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+/* ======= IMÁGENES ======= */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+/* ======= UTILIDADES ======= */
+.text-center {
+  text-align: center;
+}
+
+.muted {
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gap-10 {
+  gap: 10px;
+}
+
+.rounded {
+  border-radius: 8px;
+}
