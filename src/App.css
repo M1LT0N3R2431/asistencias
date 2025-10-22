@@ -1,63 +1,198 @@
-/* Estilos generales y layout */
-.app-root {
-  display: flex;
-  min-height: 100vh;
-  background: #f4f6f8;
+
+/* ======== RESET Y TIPOGRAFÍA ======== */
+body {
+  margin: 0;
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  background: #f0f4ff;
+  color: #1e293b;
 }
 
-/* Sidebar */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* ======== LOGIN CARD ======== */
+.card {
+  background: #fff;
+  padding: 30px 25px;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.login-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+button {
+  background: #2563eb;
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #1d4ed8;
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+.btn-outline {
+  background: #fff;
+  color: #2563eb;
+  border: 2px solid #2563eb;
+}
+
+/* ======== INPUTS ======== */
+input,
+select {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+  font-size: 14px;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 5px rgba(37, 99, 235, 0.5);
+}
+
+/* ======== USUARIO ======== */
+.user-view {
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+}
+
+.webcam-frame {
+  margin: 20px auto;
+  border: 3px solid #2563eb;
+  border-radius: 12px;
+  display: inline-block;
+}
+
+.empleados-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.empleado-card {
+  background: #fff;
+  padding: 15px;
+  border-radius: 12px;
+  flex: 1 1 200px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  text-align: left;
+}
+
+/* ======== ADMIN PANEL ======== */
+.admin-panel {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+}
+
 .sidebar {
-  width: 240px;
-  background: #083d3d;
-  color: #fff;
+  width: 220px;
+  background: #1e40af;
+  color: white;
   padding: 20px;
   display: flex;
   flex-direction: column;
-}
-.sidebar .brand { font-weight: 700; font-size: 18px; margin-bottom: 18px; }
-.sidebar button { margin-top: auto; }
-
-/* Main content */
-.main {
-  flex: 1;
-  padding: 24px;
+  gap: 15px;
 }
 
-/* Topbar */
-.topbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 18px;
+.sidebar h3 {
+  margin-bottom: 15px;
+  text-align: center;
 }
 
-/* Employee card */
-.employee-card {
-  background: #fff;
-  padding: 12px;
-  border-radius: 10px;
-  box-shadow: 0 6px 18px rgba(10,10,10,0.06);
-  display:flex;
-  align-items:center;
-  justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 12px;
+.sidebar ul {
+  list-style: none;
+  padding: 0;
 }
 
-/* Small helpers */
-.badge {
-  padding: 6px 10px;
+.sidebar li {
+  padding: 10px;
   border-radius: 8px;
-  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
 }
-.badge.present { background: #d1fae5; color: #065f46; }
-.badge.retardo { background: #fff7ed; color: #92400e; }
-.badge.absent { background: #fee2e2; color: #991b1b; }
 
-/* Webcam box */
-.webcam-box {
+.sidebar li:hover {
+  background: #3b82f6;
+}
+
+.admin-content {
+  flex: 1;
+  padding: 30px;
+  background: #f0f4ff;
+}
+
+.admin-content h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.admin-content table {
+  width: 100%;
+  border-collapse: collapse;
   background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.admin-content th,
+.admin-content td {
   padding: 12px;
-  border-radius: 10px;
-  margin-top: 12px;
+  text-align: center;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.admin-content th {
+  background: #2563eb;
+  color: white;
+}
+
+.admin-content tr:nth-child(even) {
+  background: #f1f5f9;
+}
+
+/* ======== RESPONSIVE ======== */
+@media (max-width: 768px) {
+  .admin-panel {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .empleados-list {
+    flex-direction: column;
+  }
 }
