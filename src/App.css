@@ -1,107 +1,68 @@
-/* 🎨 Paleta de colores - CENTRALIZADA */
-:root {
-  /* Colores Base */
-  --color-bg-dark: #1e1e2f;
-  --color-bg-light: #2a2a45;
-  --color-text-primary: #f3f3f3;
-  --color-text-secondary: #aaa;
-  
-  /* Colores de Marcas/Acento */
-  --color-react: #61dafb;
-  --color-vite: #646cff;
-
-  /* Sombras */
-  --shadow-blur-logo: 1.5em; 
-  --shadow-card-base: 0 4px 20px rgba(0, 0, 0, 0.3);
-  --shadow-card-hover: 0 8px 25px rgba(0, 0, 0, 0.4);
-}
-
-/* 🔲 Contenedor principal */
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-  
-  background: linear-gradient(145deg, var(--color-bg-dark) 0%, var(--color-bg-light) 100%);
-  color: var(--color-text-primary);
-  font-family: "Inter", system-ui, sans-serif;
-  
+.app {
+  font-family: Arial, sans-serif;
+  background-color: #eef2f7;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 
-/* ⚙️ Logo */
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  transition: all 0.4s ease;
-  filter: drop-shadow(0 0 0 transparent); 
+.login, .login-admin, .usuario, .admin {
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+  text-align: center;
+  color: #1e3a8a;
+}
+
+button {
+  background: #1e40af;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  margin: 5px;
+  border-radius: 8px;
   cursor: pointer;
 }
 
-.logo:hover {
-  transform: scale(1.1);
-  filter: drop-shadow(0 0 var(--shadow-blur-logo) var(--color-vite));
+button:hover {
+  background: #1d4ed8;
 }
 
-.logo.react:hover {
-  filter: drop-shadow(0 0 var(--shadow-blur-logo) var(--color-react));
+input, select {
+  width: 100%;
+  padding: 8px;
+  margin: 8px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
 }
 
-/* 🔁 Animación (Usado para el logo de Vite en App.jsx) */
-@keyframes logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+table {
+  width: 100%;
+  margin-top: 15px;
+  border-collapse: collapse;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .logo-spin { 
-    animation: logo-spin infinite 15s linear;
-  }
+th, td {
+  border: 1px solid #ddd;
+  text-align: center;
+  padding: 8px;
 }
 
-/* 🧱 Tarjeta o contenedor */
-.card {
-  background: var(--color-bg-light); 
-  border-radius: 1rem;
-  padding: 2em;
-  box-shadow: var(--shadow-card-base);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  margin-top: 1.5rem;
+th {
+  background-color: #2563eb;
+  color: white;
 }
 
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-card-hover);
-}
-
-/* 📘 Texto secundario */
-.read-the-docs {
-  color: var(--color-text-secondary);
-  font-size: 0.9rem;
-  margin-top: 1rem;
-  transition: color 0.3s ease;
-}
-
-.read-the-docs:hover {
-  color: var(--color-react); 
-}
-
-/* 📱 Responsivo */
-@media (max-width: 768px) {
-  #root {
-    padding: 1rem;
-  }
-
-  .logo {
-    height: 4.5em;
-  }
-
-  .card {
-    padding: 1.2em;
-  }
+.empleado-card {
+  background-color: #f3f4f6;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 10px;
 }
